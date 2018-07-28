@@ -16,11 +16,71 @@ body {
   
   
 }
+.elevatorSpace{
+  position: relative;
+  border-left: 10px solid RGB(50,50,50); 
+  height:400px;
+  width:400px;
+  display: inline;
+}
+.elevatorSpaceAbs{
+  position: absolute;
+  height:400px;
+  width:400px;
+  left:2200px; 
+  /*Left position subject to change calculated as follows
+  (Number of items to the left) * (width + margin-left + margin-right)
+  
+  */
+  z-index:500;
+  display: inline;
+  transform: translate(0,50%);
+  transition: transform 1s;
+}
+.elevator{
+  position: relative;
+  display:inline-block;
+  height:400px;
+  width:200px;
+  left:50%;
+  margin-left:-100px;
+  border: 5px solid RGB(50,50,50); 
+}
+#floor_num_display{
+  background-color:RGB(50,50,50);
+  color:white;
+  line-height: 40px;
+  font-size:30px;
+  text-align: center;
+  border-bottom: 5px solid RGB(50,50,50);
+}
+.elevatorButtons{
+  position: absolute;
+  display: inline-block;
+  top:210px;
+  margin-left:210px;
+  
+}
+.elevatorButtons i{
+  font-size:20px;
+  line-height: 25px;
+  text-align: center;
+  margin-top:10px;
+  width:30px;
+  height: 30px;
+  display: block;
+  color:white;
+  border: 2px solid RGB(50,50,50);
+  background-color:RGB(50,50,50);;
+  border-radius: 50%;
+  cursor:pointer;
+}
+
 .item{
   position: relative;
-
   margin-right: 300px;
   border-left: 10px solid RGB(50,50,50);
+  
   width:800px;
   height:400px;
 
@@ -68,11 +128,14 @@ body {
 .canvasBorder4{
   border: 10px solid burlywood;
 }
-.floor1 {
+
+/*The transform translate value is basically which floor it is on relatvie to current one*/
+.floor {
   width: 100%;
   display:flex;
+  position: absolute;
   height:400px;
   transform: translate(0,50%);
   align-items: center;
-  transition: transform 1s;
+  
 }
