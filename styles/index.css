@@ -1,0 +1,78 @@
+body {
+  width: 10000px;
+  font-weight:200;
+  overflow-y: hidden;
+
+}
+.container{
+  width: 100%;
+  height: 100%;
+  
+}
+.mainContent{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+  
+}
+.item{
+  position: relative;
+
+  margin-right: 300px;
+  border-left: 10px solid RGB(50,50,50);
+  width:800px;
+  height:400px;
+
+}
+.item_text{
+  width:50%;
+  position: absolute;
+  top:50%;
+  transform: translate(0,-50%);
+  
+}
+.item_title{
+  text-align: right;
+  position: relative;
+  font-size:30px;
+  
+}
+.item_desc{
+  text-align: right;
+  font-size:15px;
+  padding-left: 20px;
+  
+}
+.item p{
+}
+.item_work{
+  height: 300px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(0,-50%);
+  margin-left: 20px;
+}
+
+.canvasBorder1{
+  
+  border: 10px solid RGB(230,90,90);
+}
+.canvasBorder2{
+  border: 10px solid RGB(230,230,230);
+}
+.canvasBorder3{
+  border: 10px solid RGB(50,50,50);
+}
+.canvasBorder4{
+  border: 10px solid burlywood;
+}
+.floor1 {
+  width: 100%;
+  display:flex;
+  height:400px;
+  transform: translate(0,50%);
+  align-items: center;
+  transition: transform 1s;
+}
