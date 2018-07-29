@@ -4,7 +4,8 @@ body, html{
   margin:0;
   padding:0;
   position: relative;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-weight: 400;
 }
 
@@ -31,7 +32,9 @@ body, html{
   /*Centers element to middle height of parent element*/
   position: absolute;
   top:50%;
-  transform: translate(0,-50%);
+  -webkit-transform: translate(0,-50%);
+      -ms-transform: translate(0,-50%);
+          transform: translate(0,-50%);
   
 }
 .centerAbsoluteWidth{
