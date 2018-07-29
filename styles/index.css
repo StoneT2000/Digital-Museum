@@ -2,6 +2,7 @@ body {
   width: 10000px;
   font-weight:200;
   overflow-y: hidden;
+  height:100%;
 
 }
 .container{
@@ -34,7 +35,8 @@ body {
   */
   z-index:500;
   display: inline;
-  transform: translate(0,50%);
+  top:50%;
+  transform: translate(0,0);
   transition: transform 1s;
 }
 .elevator{
@@ -138,4 +140,9 @@ body {
   transform: translate(0,50%);
   align-items: center;
   
+}
+
+.floor_title{
+  position: fixed;
+  top: 20px;
 }
