@@ -146,6 +146,7 @@ body {
 /*The transform translate value is basically which floor it is on relatvie to current one*/
 .floor {
   width: 100%;
+  z-index: 0;
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -164,5 +165,16 @@ body {
   position: fixed;
   top: 20px;
   left:20px;
+  z-index:0;
   font-size:40px;
+}
+.full_screen{
+  z-index: 100;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.full_screen i{
+  font-size:20px;
 }
