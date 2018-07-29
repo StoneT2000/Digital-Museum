@@ -1,7 +1,7 @@
 var floor = 1;
 var num_of_floors = 4;
-var bottom_floor = -2;
-var floor_names = ["Proof Without Words", "...", "Under construction", "Poly Art", "More Poly Art","Astronomy I", "Astronomy II"]
+var bottom_floor = -1;
+var floor_names = ["Proof Without Words", "Under construction", "Poly Art", "More Poly Art","Astronomy I", "Astronomy II"]
 $(document).on("ready",function(){
   
   //Load floors in positions
@@ -18,14 +18,14 @@ $(document).on("ready",function(){
   }
   
   
-  $("#go_up").on("click", function(){
+  $(".go_up").on("click", function(){
     floor++;
     elevator_move(floor, true);
     
     change_floor(floor, true);
     //Floors seperated by 1000px each, 1000 beacause no one opens sites with a window height of 1000px....
   });
-  $("#go_down").on("click", function(){
+  $(".go_down").on("click", function(){
     floor--;
     elevator_move(floor, false);
     change_floor(floor);
@@ -78,6 +78,7 @@ $(document).on("ready",function(){
     if (document.readState = "complete"){
       //If document loads all images and svgs, continue
       $(".floor").css("transition", "transform 2s");
+      $(".floor").css("transition-delay", "1s");
     }
   }
   $(".full_screen").on("click", function(){
@@ -92,13 +93,15 @@ var elevator_translate_timer;
 //Display text for what floor user goes to and what floor they are on
 //Also move elevator to give impression that it is moving
 function elevator_move(current_floor, up){
+  $("#elevator_door").css("width","100%");
   $("#floor_num_display").text("Going to floor " + current_floor);
   $("#floor_num_display").css("font-size","20px")
   clearTimeout(floor_num_display_timer);
   floor_num_display_timer = window.setTimeout(function(){
     $("#floor_num_display").text(current_floor);
     $("#floor_num_display").css("font-size","30px")
-  },2000);
+    $("#elevator_door").css("width","0%");
+  },3000);
   var percent = "-30%";
   if (up == false){
     percent = "30%";
@@ -113,7 +116,7 @@ function elevator_move(current_floor, up){
     else{
       $(".floor_title").text("You are at nowhere...")
     }
-  }, 1000);
+  }, 1500);
 }
   
 

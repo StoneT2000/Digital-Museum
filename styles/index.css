@@ -35,7 +35,7 @@ body {
   (Number of items to the left) * (width + margin-left + margin-right)
   
   */
-  z-index:500;
+  z-index:0;
   display: inline;
   top:50%;
   -webkit-transform: translate(0,0);
@@ -46,6 +46,7 @@ body {
   -o-transition: transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
+  transition-delay: 1s;
 }
 .elevator{
   position: relative;
@@ -68,7 +69,8 @@ body {
   position: absolute;
   display: inline-block;
   top:210px;
-  margin-left:210px;
+  margin-left:310px;
+  z-index:20;
   
 }
 .elevatorButtons i{
@@ -177,4 +179,13 @@ body {
 }
 .full_screen i{
   font-size:20px;
+}
+
+#elevator_door{
+  width:0%;
+  float:right;
+  height:345px;
+  background-color:whitesmoke;
+  transition: width 1s;
+  transition-delay: 0s;
 }
