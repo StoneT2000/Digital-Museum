@@ -1,6 +1,7 @@
 var floor = 1;
 var num_of_floors = 4;
 var bottom_floor = -2;
+var floor_names = ["Proof Without Words", "...", "Under construction", "Poly Art", "More Poly Art","Astronomy I", "Astronomy II"]
 $(document).on("ready",function(){
   
   //Load floors in positions
@@ -104,16 +105,25 @@ function elevator_move(current_floor, up){
   clearTimeout(elevator_translate_timer);
   elevator_translate_timer = window.setTimeout(function(){
     $(".elevatorSpaceAbs").css("transform","translate(0,0)");
+    if (current_floor <= num_of_floors + bottom_floor - 1 && current_floor >= bottom_floor){
+      $(".floor_title").text(floor_names[current_floor - bottom_floor])
+    }
+    else{
+      $(".floor_title").text("You are at nowhere...")
+    }
   }, 1000);
 }
+  
 
 function change_floor(new_floor){
   for (var i = bottom_floor; i<=num_of_floors; i ++){
     if (new_floor == i){
       $("#floor"+i).css("transform","translate(0,0)");
+      
     }
     else {
       $("#floor"+i).css("transform","translate(0, " + (new_floor-i)*1000+"px)");
     }
   }
+  
 }
