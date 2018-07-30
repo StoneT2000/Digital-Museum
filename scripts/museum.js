@@ -215,8 +215,8 @@ function switchScene(modeVal){
     $(".floor_background").css("border-bottom", "15px solid RGB(230,230,230)");
     $(".floor_background2").css("border-bottom","15px solid RGB(230,230,230)")
     $(".elevatorSpace").css("border-left","10px solid white")
-    $(".floor_background").css("background-image","url(../images/museumstructure/background2.jpg)")
-    $(".floor_background2").css("background-image","url(../images/museumstructure/floor6.jpg)")
+    $(".floor_background").css("background-image","url(images/museumstructure/background2.jpg)")
+    $(".floor_background2").css("background-image","url(images/museumstructure/floor6.jpg)")
     
   }
 }
