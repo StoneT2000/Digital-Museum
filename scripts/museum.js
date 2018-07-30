@@ -56,19 +56,18 @@ $(document).on("ready",function(){
   $(".elevatorSpaceAbs").css("top",topval + "px")
   $(".elevatorSpace").css("top",topval + "px")
   $(".elevatorSpaceAbsReal").css("top",topval + "px");
+  $(".floor_background").css("top", topval + "px");
   //When window is resized, reset top values for .items
   window.onresize = function(e){
     var topval = (window.innerHeight - 400)/2;
     //400 = height of floors
     $(".item").css("top",topval + "px")
-    if (mode == 0){
-      $(".elevatorSpaceAbs").css("top",topval + "px");
-    }
-    else if (mode == 1){
-      $(".elevatorSpaceAbsReal").css("top",topval + "px");
-    }
+    $(".elevatorSpaceAbs").css("top",topval + "px");
+    $(".elevatorSpaceAbsReal").css("top",topval + "px");
     
     $(".elevatorSpace").css("top",topval + "px")
+    
+    $(".floor_background").css("top", topval + "px");
   }
   
   
@@ -131,12 +130,15 @@ function elevator_move(current_floor, up){
     $("#floor_num_display").text("Going to floor " + current_floor);
     $("#elevator_door").css("width","100%");
     $("#floor_num_display").css("font-size","20px")
-    $(".elevatorSpaceAbs").css("transform","translate(0," + percent + ")");
+    clearTimeout(elevator_translate_timer);
+    elevator_translate_timer = window.setTimeout(function(){
+      $(".elevatorSpaceAbs").css("transform","translate(0," + percent + ")");
+      $(".elevatorSpaceAbsReal").css("transform","translate(0," + percent + ")");
+    }, 1000);
     
     //Realistic
     $(".elevatorDoorLeft").css("width","87.5px");
     $(".elevatorDoorRight").css("width","87px");
-    $(".elevatorSpaceAbsReal").css("transform","translate(0," + percent + ")");
     
     clearTimeout(floor_num_display_timer);
     floor_num_display_timer = window.setTimeout(function(){
@@ -165,7 +167,7 @@ function elevator_move(current_floor, up){
     else{
       $(".floor_title").text("You are at nowhere...")
     }
-  }, 1500);
+  }, 2000);
 }
   
 
@@ -191,10 +193,30 @@ function switchScene(modeVal){
   if (modeVal == 0){
     $(".elevatorSpaceAbsReal").css("display","none");
     $(".elevatorSpaceAbs").css("display","inline");
+    $(".item").css("border-left", "10px solid RGB(50,50,50)");
+    $(".floor_background").css("background-image","none");
+    $(".floor_background").css("border-top","none");
+    $(".floor_background2").css("background-image","none")
+    $(".floor_background2").css("border-bottom","none");
+    
+    //$(".floor_background2").css("background-color","burlywood")
+    $(".item").css("color", "RGB(50,50,50)");
+    $(".elevatorSpace").css("border-left","10px solid RGB(50,50,50)")
   }
   else if (modeVal == 1){
     $(".elevatorSpaceAbs").css("display","none");
     $(".elevatorSpaceAbsReal").css("display","inline");
+    
+    //Set CSS
+    $(".item").css("color", "white");
+
+    $(".item").css("border-left", "10px solid white");
+    $(".floor_background").css("border-top","5px solid RGB(230,230,230)");
+    $(".floor_background").css("border-bottom", "15px solid RGB(230,230,230)");
+    $(".floor_background2").css("border-bottom","15px solid RGB(230,230,230)")
+    $(".elevatorSpace").css("border-left","10px solid white")
+    $(".floor_background").css("background-image","url(../images/museumstructure/background2.jpg)")
+    $(".floor_background2").css("background-image","url(../images/museumstructure/floor6.jpg)")
     
   }
 }
