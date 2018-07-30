@@ -12,6 +12,8 @@
   width:0px;
   height:400px;
   margin-left:-92px;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
   transition: width 1s;
   z-index:1;
 }
@@ -22,6 +24,8 @@
   margin-right: 13px;
   height:400px;
   left:50%;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
   transition: width 1s;
   z-index:1;
 

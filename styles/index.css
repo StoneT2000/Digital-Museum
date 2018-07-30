@@ -214,7 +214,11 @@ body {
   float:right;
   height:345px;
   background-color:whitesmoke;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
   transition: width 1s;
-  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
   z-index: 2;
 }
