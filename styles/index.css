@@ -4,6 +4,8 @@ body {
   overflow-y: hidden;
   height:100%;
 
+  background-repeat:repeat-y;
+
 }
 .container{
   width: 100%;
@@ -25,17 +27,20 @@ body {
   height:400px;
   width:400px;
   display: inline;
+  z-index:0;
 }
-.elevatorSpaceAbs{
+.elevatorSpaceAbs, .elevatorSpaceAbsReal{
   position: absolute;
   height:400px;
-  width:400px;
+  width:200px;
+  margin-left:100px;
   left:2200px; 
   /*Left position subject to change calculated as follows
   (Number of items to the left) * (width + margin-left + margin-right)
   
   */
-  z-index:0;
+  z-index:1;
+  background-color:white;
   display: inline;
   top:50%;
   -webkit-transform: translate(0,0);
@@ -46,7 +51,6 @@ body {
   -o-transition: transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-  transition-delay: 1s;
 }
 .elevator{
   position: relative;
@@ -82,6 +86,7 @@ body {
   height: 30px;
   display: block;
   color:white;
+  z-index:20;
   border: 2px solid RGB(50,50,50);
   background-color:RGB(50,50,50);;
   border-radius: 50%;
@@ -147,6 +152,7 @@ body {
 
 /*The transform translate value is basically which floor it is on relatvie to current one*/
 .floor {
+  color:white;
   width: 100%;
   z-index: 0;
   display:-webkit-box;
@@ -160,9 +166,30 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  
-}
 
+
+  background-position: bottom;
+  background-size: cover;
+}
+.floor_background{
+  position:absolute;
+  height:400px;
+  background-image: url(../images/museumstructure/background2.jpg);
+  border-bottom: 15px solid RGB(230,230,230);
+  border-top: 5px solid RGB(230,230,230);
+  width:10000px;
+  z-index:0;
+}
+.floor_background2{
+  background-image: url(../images/museumstructure/floor6.jpg);
+  width:10000px;
+  height:70px;
+  border-bottom: 15px solid RGB(230,230,230);
+  z-index:0;
+  bottom:-207px;
+  z-index:10;
+  position: absolute;
+}
 .floor_title{
   position: fixed;
   top: 20px;
@@ -170,15 +197,17 @@ body {
   z-index:0;
   font-size:40px;
 }
-.full_screen{
+.options{
   z-index: 100;
   cursor: pointer;
   position: fixed;
   top: 10px;
   right: 10px;
+  width:20px;
 }
-.full_screen i{
+.options i{
   font-size:20px;
+  margin-bottom: 10px;
 }
 
 #elevator_door{
@@ -188,4 +217,5 @@ body {
   background-color:whitesmoke;
   transition: width 1s;
   transition-delay: 0s;
+  z-index: 2;
 }

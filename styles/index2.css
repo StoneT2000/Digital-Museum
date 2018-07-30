@@ -1,0 +1,41 @@
+/*css for realistic museum look*/
+.elevatorImage{
+  position: relative;
+  display:inline-block;
+  height:400px;
+  width:200px;
+  left:50%;
+  z-index: 3;
+  margin-left:-100px;
+}
+.elevatorDoorLeft{
+  width:0px;
+  height:400px;
+  margin-left:-92px;
+  transition: width 1s;
+  z-index:1;
+}
+.elevatorDoorRight{
+
+  width:0px;
+  float: right;
+  margin-right: 13px;
+  height:400px;
+  left:50%;
+  transition: width 1s;
+  z-index:1;
+
+}
+#floor_num_display_real{
+  color:RGB(50,50,50);
+  line-height: 40px;
+  font-size:30px;
+  z-index:-2;
+
+  top:50%;
+  width:200px;
+  text-align: center;
+}
+.elevatorSpaceAbsReal{
+
+}
