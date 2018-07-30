@@ -26,7 +26,7 @@ body {
   width:400px;
   display: inline;
 }
-.elevatorSpaceAbs{
+.elevatorSpaceAbs, .elevatorSpaceAbsReal{
   position: absolute;
   height:400px;
   width:400px;
@@ -170,15 +170,17 @@ body {
   z-index:0;
   font-size:40px;
 }
-.full_screen{
+.options{
   z-index: 100;
   cursor: pointer;
   position: fixed;
   top: 10px;
   right: 10px;
+  width:20px;
 }
-.full_screen i{
+.options i{
   font-size:20px;
+  margin-bottom: 10px;
 }
 
 #elevator_door{

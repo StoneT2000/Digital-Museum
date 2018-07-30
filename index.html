@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel ="stylesheet" href="styles/base.css">
   <link rel ="stylesheet" href="styles/index.css">
+  <link rel ="stylesheet" href="styles/index2.css">
+  
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -25,12 +27,32 @@
     <!--All page content goes here -->
     <div class="row mainContent">
       <div class="floor_title">Poly Art</div>
-      <div class="full_screen"><i class="fas fa-expand-arrows-alt" onclick="toggleFullScreen()"></i></div>
+      <div class="options">
+        <i class="fas fa-expand-arrows-alt" onclick="toggleFullScreen()"></i>
+        <i class="far fa-square" id="switchScene"></i>
+      </div>
       <!--Actaul elevator div-->
+
+
       <div class="elevatorSpaceAbs">
-        <div class="elevator" style="">
+        <div class="elevator" style="" >
           <div id="floor_num_display">1</div>
           <div id="elevator_door"></div>
+        </div>
+      </div>
+
+
+      <!-- Real elevator -->
+      <div class="elevatorSpaceAbsReal">
+        
+        <div class="elevator" style="border:none;" >
+          
+
+          <img src="images/museumstructure/elevator.png" class="elevatorimage">
+          <div id="floor_num_display_real" style="position: absolute;">1</div>
+          <img src="images/museumstructure/left_door.png" class="elevatorDoorLeft">
+          <img src="images/museumstructure/door_right.png" class="elevatorDoorRight">
+          
         </div>
       </div>
       <div class="floor" id="floor-1">
@@ -85,6 +107,10 @@
             </div>
         </div>     
         <div class="elevatorSpace">
+           <div class="elevatorButtons">
+            <i class="fas fa-arrow-up go_up"></i>
+            <i class="fas fa-arrow-down go_down"></i>
+          </div>
         </div>
         <div class="item" id="">
           <div></div>
