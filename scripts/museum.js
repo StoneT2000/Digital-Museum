@@ -57,7 +57,8 @@ $(document).on("ready",function(){
   $(".elevatorSpace").css("top",topval + "px")
   $(".elevatorSpaceAbsReal").css("top",topval + "px");
   $(".floor_background").css("top", topval + "px");
-  //When window is resized, reset top values for .items
+  //When window is resized, reset top values for .item
+  $(".floor_background2").css("top", window.innerHeight-topval + "px");
   window.onresize = function(e){
     var topval = (window.innerHeight - 400)/2;
     //400 = height of floors
@@ -68,6 +69,7 @@ $(document).on("ready",function(){
     $(".elevatorSpace").css("top",topval + "px")
     
     $(".floor_background").css("top", topval + "px");
+    $(".floor_background2").css("top", window.innerHeight-topval + "px");
   }
   
   
